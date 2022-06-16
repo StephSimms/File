@@ -11,10 +11,17 @@ namespace File
     {
         static void Main(string[] args)
         {
-            string text = "test";
-            File.WriteAllText(@"C\:users\steph\OneDrive\Documents\Text.txt", text);
-            
+                        
             Console.WriteLine("Please enter a number: ");
+            double userNum = Convert.ToDouble(Console.ReadLine());
+
+            File.WriteAllText(@"C\:users\steph\OneDrive\Documents\Text.txt", ConvertToString(userNum));
+
+            Console.WriteLine("Let's get your number from our files.");
+            string retrieveNum = File.ReadAllText(@"C\:users\steph\OneDrive\Documents\Text.txt");
+            Console.WriteLine($"Your number is {retrieveNum}.");
+            Console.ReadKey();
+
         }
     }
 }
